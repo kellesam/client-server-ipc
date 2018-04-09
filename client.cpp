@@ -12,10 +12,6 @@ int main() {
     struct hostent* server_host_info;
     char buffer[600];
     
-    //read in 500 chars, trim newline
-    fgets(buffer, 501, stdin);
-    buffer[strcspn(buffer, "\n")] = '\0';
-
     memset((char*)&server_address, '\0', sizeof(server_address));
 	server_address.sin_family = AF_INET;
 	server_address.sin_port = htons(26578);      //randomly chosen port number
@@ -31,7 +27,8 @@ int main() {
     
 	send(socket_FD, buffer, strlen(buffer), 0);
 	memset(buffer, '\0', sizeof(buffer));
-	read(socket_FD, buffer, sizeof(buffer) - 1);
+	std::cout << read(socket_FD, buffer, sizeof(buffer) - 1) << std::endl;
+	std::cout << buffer << std::endl;
     
     return 0;
 }
