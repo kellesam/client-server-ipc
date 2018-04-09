@@ -50,8 +50,9 @@ int main() {
 	    if (input_string.length() <= SCREEN_WIDTH) {
 	        formatted_string += input_string;
 	        formatted_string += '\n';
-	        std::cout << formatted_string << std::endl;
-	        return 0;
+	        send(connection_FD, formatted_string.c_str(), formatted_string.length(), 0);
+		    close(connection_FD);
+		    continue;
 	    }
 	    
 	    std::istringstream ss(input_string);
@@ -77,7 +78,6 @@ int main() {
 	        //word too long for own line
 	        else {
 	            int space_left = SCREEN_WIDTH - char_count;
-	            std::cout << space_left << std::endl;
 	            formatted_string += word.substr(0, space_left);
 	            formatted_string += '\n';
 	            char_count = 0;
@@ -98,12 +98,10 @@ int main() {
 	        }
 	    }
 	    
-		std::cout << formatted_string << std::endl;
 	    send(connection_FD, formatted_string.c_str(), formatted_string.length(), 0);
 		close(connection_FD);
 	}
 
 	close(socket_FD);
-
     return 0;
 }

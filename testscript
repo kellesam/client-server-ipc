@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Test case: small number of words"
+echo "Lorem ipsum dolor sit amet" | ./client
+echo
+
+echo "Test case: large number of words"
+echo "Lorem ipsum dolor sit amet, debet latine eruditi in has, vim no alterum assentior. Sed quas virtute offendit at, nibh equidem eam eu. Mazim saepe tibique an duo, no ius oratio aliquip, an vim indoctum interesset." | ./client
+echo
+
+echo "Test case: word over 80 chars"
+echo "Lorem ipsum dolor sit amet, debet latine eruditi in has aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa eruditi in has, vim no alterum assentior. Sed quas virtute offendit at, nibh equidem eam eu. Mazim saepe tibique an duo, no ius oratio aliquip, an vim indoctum interesset" | ./client
+echo
+
+echo "Test case: more than 500 chars"
+echo "Lorem ipsum dolor sit amet, debet latine eruditi in has, vim no alterum assentior. Sed quas virtute offendit at, nibh equidem eam eu. Mazim saepe tibique an duo, no ius oratio aliquip, an vim indoctum interesset. Lorem ipsum dolor sit amet, debet latine eruditi in has, vim no alterum assentior. Sed quas virtute offendit at, nibh equidem eam eu. Mazim saepe tibique an duo, no ius oratio aliquip, an vim indoctum interesset. Lorem ipsum dolor sit amet, debet latine eruditi in has, vim no alterum assentior. Sed quas virtute offendit at, nibh equidem eam eu. Mazim saepe tibique an duo, no ius oratio aliquip, an vim indoctum interesset. Lorem ipsum dolor sit amet, debet latine eruditi in has, vim no alterum assentior. Sed quas virtute offendit at, nibh equidem eam eu. Mazim saepe tibique an duo, no ius oratio aliquip, an vim indoctum interesset. Lorem ipsum dolor sit amet, debet latine eruditi in has, vim no alterum assentior. Sed quas virtute offendit at, nibh equidem eam eu. Mazim saepe tibique an duo, no ius oratio aliquip, an vim indoctum interesset." | ./client
+echo

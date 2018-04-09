@@ -27,7 +27,7 @@ int main() {
     
 	send(socket_FD, buffer, strlen(buffer), 0);
 	memset(buffer, '\0', sizeof(buffer));
-	std::cout << read(socket_FD, buffer, sizeof(buffer) - 1) << std::endl;
+	read(socket_FD, buffer, sizeof(buffer) - 1);
 	std::cout << buffer << std::endl;
     
     return 0;
